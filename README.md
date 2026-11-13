@@ -70,6 +70,15 @@ This is a sample permission letter for the lab.
 
    [Terminal output](evidence/06-dnsrecon.txt)
 
+## What I learned
+
+- **WHOIS:** I learned that domain records can show which name servers a website uses.
+- **WhatWeb:** I learned how to spot software a website uses, such as WordPress.
+- **nslookup:** I learned how to turn a website name into an IP address.
+- **curl:** I learned how to read a website’s response and see when it sends visitors to HTTPS.
+- **WAFW00F:** I learned how to check for signs of a firewall that protects a website.
+- **DNSRecon:** I learned that DNS records can show where a domain receives email. I also used the results to confirm the IP address I found with nslookup.
+
 ## Conclusion
 
 So far, I’ve learned how to use Kali Linux in VirtualBox to gather information about a website. I learned how to find the IP address behind a website name, see where its email is handled, and check what software it uses. I also saw how a website redirects visitors to HTTPS and how a tool can look for signs of a web firewall. Comparing the results helped me see when two tools confirmed the same finding, like the website’s IP address.
