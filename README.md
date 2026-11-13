@@ -69,3 +69,7 @@ This is a sample permission letter for the lab.
    ![Review DNS records with DNSRecon](evidence/06-dnsrecon.png)
 
    [Terminal output](evidence/06-dnsrecon.txt)
+
+## Conclusion
+
+So far, I’ve learned how to use Kali Linux in VirtualBox to gather information about a website. I learned how to find the IP address behind a website name, see where its email is handled, and check what software it uses. I also saw how a website redirects visitors to HTTPS and how a tool can look for signs of a web firewall. Comparing the results helped me see when two tools confirmed the same finding, like the website’s IP address.
