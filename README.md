@@ -14,7 +14,7 @@ This project documents six reconnaissance steps for the Networkwalks lab.
 
 ## Sample permission letter
 
-The unsigned sample lists August 17–24, 2026. The lab output includes November 12–13, 2026. Names, the reference number, and the batch identifier are redacted.
+This is a sample permission letter for the lab.
 
 ![Sample letter, page 1](evidence/permission-1.png)
 
@@ -24,7 +24,7 @@ The unsigned sample lists August 17–24, 2026. The lab output includes November
 
 1. **Review domain registration with WHOIS**
 
-   The WHOIS excerpt listed four name servers: `NS6135.HOSTGATOR.COM`, `NS6136.HOSTGATOR.COM`, `NS29.DOMAINCONTROL.COM`, and `NS30.DOMAINCONTROL.COM`. It showed unsigned DNSSEC and a notice directing users to RDAP. The excerpt lacks the registrar and the domain creation and expiration dates.
+   I checked the website’s domain records to see which name servers were listed.
 
    ![Review domain registration with WHOIS](evidence/01-whois.png)
 
@@ -32,7 +32,7 @@ The unsigned sample lists August 17–24, 2026. The lab output includes November
 
 2. **Identify web technologies with WhatWeb**
 
-   WhatWeb showed two `301 Moved Permanently` responses before the final HTTPS URL returned `200 OK`. The final response was titled **Networkwalks Academy**. The tool reported Apache, WordPress, WordPress Download Manager, and jQuery.
+   I checked which tools and software the website uses. The results showed Apache and WordPress.
 
    ![Identify web technologies with WhatWeb](evidence/02-whatweb.png)
 
@@ -40,7 +40,7 @@ The unsigned sample lists August 17–24, 2026. The lab output includes November
 
 3. **Resolve the domain with nslookup**
 
-   The local DNS resolver at `10.0.0.1` returned a non-authoritative IPv4 answer of `192.232.216.135` for the domain.
+   I looked up the IP address that the website name points to.
 
    ![Resolve the domain with nslookup](evidence/03-nslookup.png)
 
@@ -48,7 +48,7 @@ The unsigned sample lists August 17–24, 2026. The lab output includes November
 
 4. **Inspect HTTP response headers with curl**
 
-   The HTTP HEAD request returned `301 Moved Permanently` with `Location: https://networkwalks.com/`. The HTTPS HEAD request returned `HTTP/1.1 200 OK`. The response advertised Apache in the `Server` header and WordPress in the `X-nginx-cache` header. The `Link` header referenced the WordPress REST API. The response set a cookie with the `Secure` and `HttpOnly` attributes. The cookie value is redacted in the screenshot.
+   I checked how the website responds. It redirected the first request to the secure HTTPS address, which loaded successfully.
 
    ![Inspect HTTP response headers with curl](evidence/04-curl.png)
 
@@ -56,7 +56,7 @@ The unsigned sample lists August 17–24, 2026. The lab output includes November
 
 5. **Check for a web application firewall with WAFW00F**
 
-   WAFW00F reported **ModSecurity (SpiderLabs)** after two requests. This is the tool’s fingerprinting result.
+   I checked for a web firewall. The tool reported ModSecurity.
 
    ![Check for a web application firewall with WAFW00F](evidence/05-wafw00f.png)
 
@@ -64,7 +64,7 @@ The unsigned sample lists August 17–24, 2026. The lab output includes November
 
 6. **Review DNS records with DNSRecon**
 
-   DNSRecon returned the same IPv4 address as nslookup. It listed two HostGator name servers, a mail exchanger, TXT records for SPF and site verification, and cPanel mail autodiscovery results. DNSRecon reported that DNSSEC was unconfigured.
+   I checked the website’s DNS records to see where web and email traffic are sent.
 
    ![Review DNS records with DNSRecon](evidence/06-dnsrecon.png)
 
