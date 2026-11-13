@@ -1,0 +1,9 @@
+Selected lines from the supplied WHOIS excerpt
+
+Name Server: NS6135.HOSTGATOR.COM
+Name Server: NS6136.HOSTGATOR.COM
+Name Server: NS29.DOMAINCONTROL.COM
+Name Server: NS30.DOMAINCONTROL.COM
+DNSSEC: unsigned
+>>> Last update of WHOIS database: 2026-11-12T22:39:43Z <<<
+**NOTICE** This WHOIS server is being retired. Please use our RDAP service instead.

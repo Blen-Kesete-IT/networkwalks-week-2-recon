@@ -1,0 +1,5 @@
+Selected fields from the supplied WhatWeb output
+
+http://Networkwalks.com [301 Moved Permanently] RedirectLocation[https://Networkwalks.com/]
+https://Networkwalks.com/ [301 Moved Permanently] RedirectLocation[https://networkwalks.com/]
+https://networkwalks.com/ [200 OK] HTTPServer[Apache], JQuery[3.7.1], MetaGenerator[WordPress 7.1.4,WordPress Download Manager 3.3.76], Title[Networkwalks Academy]
