@@ -65,6 +65,62 @@ The topology view showed an additional address from a different subnet. I used t
 
 [View the complete GHDB footprinting findings, hyperlinks, and existing screenshots](https://github.com/Blen-Kesete-IT/GHDB-Footprinting-lab#part-1--ghdb-and-footprinting-method)
 
+### 4.4 Expanded PM2 GHDB Findings and Screenshot Evidence
+
+This section adds details from the [GHDB Footprinting Lab](https://github.com/Blen-Kesete-IT/GHDB-Footprinting-lab) to the existing Week 2 report without replacing the earlier modules or screenshots.
+
+**Part 1 — GHDB method.** I reviewed search operators such as `intitle:`, `inurl:`, `site:`, and `filetype:` to study information indexed by search engines. A search result by itself does not prove a security vulnerability.
+
+![Original GHDB entry screenshot](https://github.com/Blen-Kesete-IT/GHDB-Footprinting-lab/raw/main/evidence/ghdb-entry.jpg)
+
+**Part 2 — Camera footprinting.** I recorded ten Insecam listing references and reported viewing camera feeds during the exercise. The listing IDs are not camera IP addresses, and the feeds' current accessibility or security settings have not been independently confirmed.
+
+![Original webcam-interface screenshot](https://github.com/Blen-Kesete-IT/GHDB-Footprinting-lab/raw/main/evidence/webcam-interface.jpg)
+
+The screenshot above is an existing interface capture, not proof of ten individually photographed camera listings.
+
+### Camera findings table
+
+| No. | Clickable camera listing | Observation | Username / Password |
+|---|---|---|---|
+| 1 | [Insecam listing 1012712](http://www.insecam.org/en/view/1012712/) | Student-reported visible feed; not independently verified | Not supplied |
+| 2 | [Insecam listing 1012784](http://www.insecam.org/en/view/1012784/) | Student-reported visible feed; not independently verified | Not supplied |
+| 3 | [Insecam listing 1012770](http://www.insecam.org/en/view/1012770/) | Student-reported visible feed; not independently verified | Not supplied |
+| 4 | [Insecam listing 1012776](http://www.insecam.org/en/view/1012776/) | Student-reported visible feed; not independently verified | Not supplied |
+| 5 | [Insecam listing 1012769](http://www.insecam.org/en/view/1012769/) | Student-reported visible feed; not independently verified | Not supplied |
+| 6 | [Insecam listing 1012766](http://www.insecam.org/en/view/1012766/) | Student-reported visible feed; not independently verified | Not supplied |
+| 7 | [Insecam listing 1012760](http://www.insecam.org/en/view/1012760/) | Student-reported visible feed; not independently verified | Not supplied |
+| 8 | [Insecam listing 1012752](http://www.insecam.org/en/view/1012752/) | Student-reported visible feed; not independently verified | Not supplied |
+| 9 | [Insecam listing 1012735](http://www.insecam.org/en/view/1012735/) | Student-reported visible feed; not independently verified | Not supplied |
+| 10 | [Insecam listing 1012730](http://www.insecam.org/en/view/1012730/) | Student-reported visible feed; not independently verified | Not supplied |
+
+**Relevant query (illustrative, not a verified GHDB entry):** `site:insecam.org/en/view/ "IP camera"`
+
+**Our findings:** Ten listings were documented, and the student reports having viewed camera feeds. Current accessibility, authorization, and underlying camera security settings were not confirmed. Public camera viewing can create privacy and information exposure risks.
+
+**What we learned:** A publicly listed endpoint or page is not the same as proof of a vulnerable device. Good footprinting distinguishes user observations, screenshots, credentials, and verified technical findings.
+
+**Part 3 — Mathematics PDF footprinting.** I collected ten entries representing open mathematics resources, university lecture notes, directories, and publishers' catalogs, with relevant search queries.
+
+## Footprinting findings
+
+| No. | PDF resource / listing | Relevant Google dork | Username / Password (if any) | Observation |
+|---|---|---|---|---|
+| 1 | [Skyline University mathematics directory](https://www.skylineuniversity.ac.ae/pdf/math/) | `intitle:index.of "parent directory" mathematics pdf` | — | Instructor's directory-listing example |
+| 2 | [UW–Madison free lecture notes](https://people.math.wisc.edu/~angenent/Free-Lecture-Notes/) | `site:wisc.edu mathematics "PDF" "calculus"` | None indicated | Public lecture-note collection |
+| 3 | [UW–Madison Elementary Calculus](https://people.math.wisc.edu/~hkeisler/calc.html) | `site:wisc.edu "Elementary Calculus" pdf` | None indicated | Open mathematics textbook page |
+| 4 | [American Institute of Mathematics open textbooks](https://textbooks.aimath.org/textbooks/approved-textbooks/) | `site:aimath.org "open textbooks" pdf` | None indicated | Curated open-textbook collection |
+| 5 | [OpenStax College Algebra 2e](https://openstax.org/books/college-algebra-2e/pages/preface) | `site:openstax.org "College Algebra 2e" pdf` | None indicated | Free textbook page with PDF option |
+| 6 | [OpenStax Precalculus 2e](https://openstax.org/books/precalculus-2e/pages/preface) | `site:openstax.org "Precalculus 2e" pdf` | None indicated | Free textbook page with PDF option |
+| 7 | [OpenStax Introductory Statistics 2e](https://openstax.org/books/introductory-statistics-2e/pages/1-introduction) | `site:openstax.org "Introductory Statistics 2e" pdf` | None indicated | Free textbook page with PDF option |
+| 8 | [OpenStax Calculus Volume 1](https://openstax.org/subjects/math) | `site:openstax.org "Calculus Volume 1" pdf` | None indicated | Mathematics catalog, book link not individually checked |
+| 9 | [OpenStax Algebra and Trigonometry 2e](https://openstax.org/subjects/math) | `site:openstax.org "Algebra and Trigonometry 2e" pdf` | None indicated | Mathematics catalog, book link not individually checked |
+| 10 | [OpenStax mathematics textbook collection](https://openstax.org/subjects/math) | `site:openstax.org/subjects/math textbooks pdf` | None indicated | General catalog; overlaps with entries 5–9 |
+
+**Footprinting lessons:** I practiced organizing findings, recording links and search operators, and separating public information from verified vulnerabilities. The mathematics examples include legitimate open educational materials, and some rows refer to shared catalog pages.
+
+**Screenshot record:** The original screenshots in Section 8 remain unchanged. The two GHDB screenshots displayed here are the existing files from the GHDB lab; no new camera-feed or PDF-page screenshots have been claimed.
+
 ## 5. Risk Analysis / Impact
 
 | # | Risk / Finding | Evidence / Observation | Potential Impact | Risk Level |
