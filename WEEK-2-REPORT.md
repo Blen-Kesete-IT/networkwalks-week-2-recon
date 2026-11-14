@@ -1,67 +1,85 @@
-# Penetration Testing Report
+# PENETRATION TESTING REPORT
+## FOOTPRINTING & NETWORK SCANNING PHASES
+**W2-PM-FINAL | CYBERSECURITY | NETWORKWALKS**
 
-**Footprinting and Network Scanning Phases**  
-**W2-PM-FINAL | Cybersecurity | NetworkWalks**
-
-| Field | Details |
+| | |
 |---|---|
-| Portfolio | Blen-Kesete-IT |
-| Program / batch | NetworkWalks Cybersecurity, B084 as recorded in the PM1 repository |
-| Modules | [W2-PM1](https://github.com/Blen-Kesete-IT/networkwalks-week-2-recon), [W2-PM2](https://github.com/Blen-Kesete-IT/GHDB-Footprinting-lab), [W2-PM3](https://github.com/Blen-Kesete-IT/Maltego-Footprinting-lab), [W2-PM4](https://github.com/Blen-Kesete-IT/TheHarvester-footprinting-lab), [W2-PM5](https://github.com/Blen-Kesete-IT/zenmap-network-discovery-lab) |
-| Phases covered | Reconnaissance, footprinting, scanning, and network discovery |
-| Scope | Course-domain observations, supplied public-source evidence, and local Wi-Fi discovery |
+| **Pentester Name (Cybersecurity Professional)** | Blen Kesete |
+| **Program/Batch** | B084 – NetworkWalks |
+| **Date** | |
+| **Modules completed** | W2-PM1 (Multiple Kali Tools)<br>W2-PM2 (GHDB Footprinting)<br>W2-PM3 (Maltego Footprinting)<br>W2-PM4 (theHarvester Footprinting)<br>W2-PM5 (Zenmap Scanning) |
+| **Client/Target** | 1. NetworkWalks course domain<br>2. My own local LAN network<br>3. Public-source results reviewed in PM2 and PM4 |
+| **Permission secured from client?** | PM1 repository includes a sample permission letter. Written approval is unverified. PM5 used my own local network. |
+| **Phases covered** | Phase 1: Reconnaissance & Footprinting<br>Phase 2: Scanning & Network Discovery |
 
 ## 1. Liability Disclaimer
 
-This report documents educational labs. The PM1 repository includes a sample permission letter. Testing scope and authorization should be confirmed before running any active assessment. The findings are observations from the recorded exercises. Vulnerability validation and exploitation were outside the reported scope.
+This report documents educational cybersecurity exercises. Active testing requires permission from the system owner and an agreed scope. The report records observations from footprinting and host discovery.
 
 ## 2. Introduction
 
-This report combines five Week 2 labs. PM1 through PM4 cover domain records, indexed web interfaces, relationship mapping, and search-source output. PM5 covers live-host discovery on a local Wi-Fi network.
+This report covers my Week 2 NetworkWalks labs. I used Kali Linux for domain footprinting and search-source comparison, Maltego on Windows to map a relationship, and Zenmap on Windows to discover live hosts on my local Wi-Fi network. The screenshots in Section 8 show the evidence available from the module repositories.
 
 ## 3. Tools Used
 
-| Module | Tools | Purpose |
-|---|---|---|
-| [W2-PM1](https://github.com/Blen-Kesete-IT/networkwalks-week-2-recon) | Kali Linux, WHOIS, WhatWeb, nslookup, curl, WAFW00F, DNSRecon | Review registration, DNS, HTTP behavior, and reported web technologies |
-| [W2-PM2](https://github.com/Blen-Kesete-IT/GHDB-Footprinting-lab) | Google Hacking Database | Review evidence of indexed camera interfaces |
-| [W2-PM3](https://github.com/Blen-Kesete-IT/Maltego-Footprinting-lab) | Maltego Graph Desktop | Document a domain-to-contact relationship |
-| [W2-PM4](https://github.com/Blen-Kesete-IT/TheHarvester-footprinting-lab) | theHarvester 4.4.4 | Compare search-source results and errors |
-| [W2-PM5](https://github.com/Blen-Kesete-IT/zenmap-network-discovery-lab) | Windows IP configuration, Zenmap | Identify the local subnet and interpret host discovery |
+| Tool | Purpose |
+|---|---|
+| Kali Linux & Windows | Operating systems used for the labs |
+| WHOIS | Review domain registration and name servers |
+| WhatWeb | Identify web technologies |
+| nslookup | Resolve a domain name using DNS |
+| curl | Inspect HTTP responses and redirects |
+| WAFW00F | Identify signs of a web application firewall |
+| DNSRecon | Review DNS and mail records |
+| Google Hacking Database | Review indexed web-interface evidence |
+| Maltego Graph Desktop | Visualize the relationship between a domain and a public contact |
+| theHarvester | Compare search-source output |
+| Zenmap (Nmap GUI) | Discover live hosts and view topology |
+| Windows CMD | Check local IP and MAC information |
 
 ## 4. Activities Performed
 
-### 4.1 Footprinting and Reconnaissance
+### 4.1 Footprinting & Reconnaissance
 
-- **PM1.** WHOIS and DNSRecon supplied domain and DNS information. WhatWeb reported Apache and WordPress. The HTTP request redirected to HTTPS. WAFW00F reported ModSecurity. The DNS lookup and DNSRecon agreed on the address observed in the lab.
-- **PM2.** The worksheet recorded ten references. A captured camera interface showed multiple images during a signed-out session. Access configuration and current availability remain unverified.
-- **PM3.** The Maltego graph showed two entities and one link between the course domain and its publicly listed organization contact address.
-- **PM4.** DuckDuckGo returned 27 raw host entries, zero IP addresses, and zero email addresses. The list included apparent duplicates and malformed entries. Baidu produced disconnections, and the multi-source run showed missing API-key warnings and source errors.
+**W2-PM1 — Multiple Kali Tools.** I used WHOIS to review domain registration and name servers. WhatWeb reported Apache and WordPress. I resolved the domain with nslookup, and DNSRecon returned the same address while also showing DNS and mail information. Curl showed an HTTP-to-HTTPS redirect. WAFW00F reported ModSecurity.
+
+**W2-PM2 — GHDB.** I recorded ten references in the worksheet. A screenshot showed a camera interface displaying images while the viewer was signed out. The current availability and access configuration remain unverified.
+
+**W2-PM3 — Maltego.** The graph showed two entities and one link connecting the course domain to its publicly listed organization contact.
+
+**W2-PM4 — theHarvester.** DuckDuckGo returned 27 raw host entries, zero IP addresses, and zero email addresses. Some entries appeared duplicated or malformed. The Baidu run reported server disconnections, and the multi-source run showed missing API-key warnings and source errors.
 
 ### 4.2 Network Scanning with Zenmap
 
-The selected Quick Scan checked 256 addresses on the local Wi-Fi subnet and reported **3 hosts up**. These were the gateway, the scanning Windows computer, and one other device. Zenmap reported MAC addresses for the remote devices, and Windows IP configuration supplied the local computer’s MAC address. The topology view also contained an address from a different subnet. The selected scan summary establishes the count for this exercise.
+I used Windows IP configuration to identify my local subnet. The selected Zenmap **Quick Scan** checked 256 addresses on my local Wi-Fi subnet and reported **3 hosts up**. The hosts were the gateway, my Windows computer, and one other device. Zenmap showed MAC addresses for the two remote devices. Windows IP configuration supplied my computer’s MAC address.
+
+The topology view showed an additional address from a different subnet. I used the selected scan summary to confirm the count for this lab.
 
 ## 5. Risk Analysis / Impact
 
-| Observation | Potential impact | Assessment |
-|---|---|---|
-| Public web and DNS metadata | Reveals technologies and infrastructure relationships | Informational |
-| Camera interface visible during a signed-out session | May expose imagery if access was unintended | Review access controls |
-| Public organization contact in Maltego | Public contact information can be reused in unsolicited outreach | Informational |
-| Raw host entries and source errors | Duplicate or malformed data could inflate an inventory | Data quality issue |
-| Three hosts visible on the local subnet | Discovery can identify devices for inventory reconciliation | Informational |
+| # | Risk / Finding | Evidence / Observation | Potential Impact | Risk Level |
+|---|---|---|---|---|
+| 1 | Web technology information visible | WhatWeb reported Apache and WordPress | Reveals technologies for security review | ● Low |
+| 2 | DNS infrastructure visible | WHOIS, nslookup, and DNSRecon returned public records | Reveals service and hosting relationships | ● Low |
+| 3 | WAF technology identifiable | WAFW00F reported ModSecurity | Reveals part of the web security architecture | ● Low |
+| 4 | Camera images visible while signed out | Supplied interface screenshot | Unintended access could expose imagery | ● Medium |
+| 5 | Search-source data quality issues | Apparent duplicates, malformed entries, and source errors | Raw counts can overstate inventory coverage | ● Low |
+| 6 | Live hosts visible on the local network | Zenmap reported three hosts up | Unfamiliar devices warrant inventory review | ● Low |
+
+**Risk level key** ● Critical ● Medium ● Low
+
+The table records potential impacts. Exploitation and vulnerability validation were outside the scope of these exercises.
 
 ## 6. Recommendations
 
-- Review public-facing metadata and maintain current web software.
-- Confirm that camera access matches the intended audience.
-- Deduplicate and validate search results before including them in an asset inventory.
-- Compare local discovery results with known devices and keep network documentation current.
+- **Review public web and DNS information.** Keep software current and review which technical details and records need to be public.
+- **Check camera access controls.** Confirm that the intended audience can access each view.
+- **Validate search results.** Remove duplicate and malformed entries before using tool output in an inventory.
+- **Maintain a local device inventory.** Compare discovery results with expected devices and document unfamiliar entries.
 
 ## 7. Conclusion
 
-The labs demonstrated how to collect and compare observations across public records, search results, and local network discovery. The selected Zenmap output established the live-host count, while the footprinting labs showed how source coverage and data quality affect what can be concluded.
+During Week 2, I completed five labs covering footprinting, reconnaissance, and network discovery. I compared DNS and web observations, reviewed indexed interfaces, mapped a public contact in Maltego, and documented how search-source errors affected theHarvester’s output. I used the selected Zenmap scan to confirm three live hosts on my local subnet and the topology view to understand how they were displayed.
 
 ## 8. Evidence Collected
 
@@ -91,6 +109,16 @@ The labs demonstrated how to collect and compare observations across public reco
 
 The [Zenmap evidence summary](https://github.com/Blen-Kesete-IT/zenmap-network-discovery-lab/blob/main/README.md#evidence) records 256 addresses checked and 3 hosts up. It also explains the additional address in the topology view.
 
-## Course Credit
+**-End-**
 
-NetworkWalks and Waqas Karim CCIE provided the lab guidance.
+## 👤 Author
+
+Blen Kesete · NetworkWalks Cybersecurity, B084
+
+## 📌 Project Information
+
+**Program Name** · Cybersecurity program at NetworkWalks  
+**Week** · 02  
+**Repository** · [GitHub](https://github.com/Blen-Kesete-IT/networkwalks-week-2-recon)  
+**Course Credit** · NetworkWalks and Waqas Karim CCIE
+
